@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    @RenderBody()
-    <p>@Html.ActionLink("Machines", "Index", "Machines")</p>
-    <p>@Html.ActionLink("Engineers", "Index", "Engineers")</p>
-    <p>@Html.ActionLink("Home", "Index", "Home")</p>
-    @await Html.PartialAsync("Footer")
+    <div class="header">
+      <h1>Factory Manager</h1>
+    </div>
+
+    <div class="lowerheader">
+      <div class="button">
+        <p>@Html.ActionLink("Home", "Index", "Home")</p>
+      </div>
+      <div class="button">
+        <p>@Html.ActionLink("Machines", "Index", "Machines")</p>
+      </div>
+      <div class="button">
+        <p>@Html.ActionLink("Engineers", "Index", "Engineers")</p>
+      </div>
+    </div>
+    <div class="container">
+      @RenderBody()
+    </div>
   </body>
 </html>
