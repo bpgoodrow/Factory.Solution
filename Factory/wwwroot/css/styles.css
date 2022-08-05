@@ -3,6 +3,14 @@ body {
 	color: white;
 }
 
+.card {
+	background: rgb(176, 76, 76);
+	width: 600px;
+	height: 600px;
+	display: flex;
+	align-items: center;
+}
+
 .header {
 	display: flex;
 	justify-content: center;
@@ -24,7 +32,7 @@ body {
 	width:100%;
 	background:rgb(112, 67, 67);
 	border-bottom: solid black 2px;
-	filter: drop-shadow(0px 5px 5px black);
+	filter: drop-shadow(0px 3px 3px black);
 }
 
 .container {
@@ -33,7 +41,7 @@ body {
 	flex-direction: column;
 	position:fixed;
 	top: 100px;
-	align-items: center;
+	align-items: flex-end;
 	justify-items: center;
 }
 
@@ -50,7 +58,7 @@ a:visited {
 }
 
 a:hover {
-
+	color: white;
   text-decoration: underline;
 }
 
