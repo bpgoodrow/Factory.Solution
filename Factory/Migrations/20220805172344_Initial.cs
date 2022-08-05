@@ -34,11 +34,17 @@ namespace ToDoList.Migrations
                     MachineId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     MachineName = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    EngineerId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Machines", x => x.MachineId);
+                    table.ForeignKey(
+                        name: "FK_Machines_Engineers_EngineerId",
+                        column: x => x.EngineerId,
+                        principalTable: "Engineers",
+                        principalColumn: "EngineerId");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -78,6 +84,11 @@ namespace ToDoList.Migrations
                 name: "IX_EngineerMachine_MachineId",
                 table: "EngineerMachine",
                 column: "MachineId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Machines_EngineerId",
+                table: "Machines",
+                column: "EngineerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -86,10 +97,10 @@ namespace ToDoList.Migrations
                 name: "EngineerMachine");
 
             migrationBuilder.DropTable(
-                name: "Engineers");
+                name: "Machines");
 
             migrationBuilder.DropTable(
-                name: "Machines");
+                name: "Engineers");
         }
     }
 }
