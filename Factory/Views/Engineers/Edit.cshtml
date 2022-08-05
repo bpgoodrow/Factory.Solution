@@ -6,6 +6,8 @@
 
 <h2>Edit</h2>
 
+<hr />
+
 <h4>Edit this engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
 
 @using (Html.BeginForm())
@@ -14,9 +16,6 @@
 
   @Html.LabelFor(model => model.EngineerName)
   @Html.EditorFor(model => model.EngineerName)
-
-  @Html.Label("Assign Machine")
-  @Html.DropDownList("MachineId")
   
   <input type="submit" value="Save" />
 }

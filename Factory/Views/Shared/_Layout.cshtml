@@ -13,19 +13,22 @@
 
     <div class="lowerheader">
       <div class="button">
-        <p>@Html.ActionLink("Home", "Index", "Home")</p>
+        <p>@Html.ActionLink("|| Home ||", "Index", "Home")</p>
       </div>
       <div class="button">
-        <p>@Html.ActionLink("Machines", "Index", "Machines")</p>
+        <p>@Html.ActionLink("|| Machines ||", "Index", "Machines")</p>
       </div>
       <div class="button">
-        <p>@Html.ActionLink("Engineers", "Index", "Engineers")</p>
+        <p>@Html.ActionLink("|| Engineers ||", "Index", "Engineers")</p>
       </div>
     </div>
     <div class="container">
       <div class="card">
         @RenderBody()
       </div>
+    </div>
+    <div class="footer">
+      <p>copyright - </p>
     </div>
   </body>
 </html>

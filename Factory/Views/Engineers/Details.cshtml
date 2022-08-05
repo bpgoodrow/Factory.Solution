@@ -5,8 +5,10 @@
 @model Factory.Models.Engineer;
 
 <h2>Engineer Details</h2>
+
 <hr />
-<h3>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
+
+<h4>@Html.DisplayNameFor(model => model.EngineerName): @Html.DisplayFor(model => model.EngineerName)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -22,6 +24,6 @@ else
   }
   </ul>
 }
-<p>@Html.ActionLink("Assign Machine", "AssignMachine", "Engineers")</p>
+<p>@Html.ActionLink("Assign Machine", "AssignMachine", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
