@@ -13,6 +13,27 @@
   @Html.LabelFor(model => model.MachineName)
   @Html.TextBoxFor(model => model.MachineName)
 
+  <br>
+
+  <p>Machine Status:</p>
+
+  <br>
+
+  @Html.Label("Opertational")
+  @Html.RadioButtonFor(model => model.MachineStatus, "Operational")
+
+  <br>
+
+  @Html.Label("Malfunctioning")
+  @Html.RadioButtonFor(model => model.MachineStatus, "Malfunctioning")
+
+  <br>
+
+  @Html.Label("In Repair")
+  @Html.RadioButtonFor(model => model.MachineStatus, "In Repair")
+
+  <br>
+
   @Html.Label("Select engineer")
   @Html.DropDownList("EngineerId")
 
